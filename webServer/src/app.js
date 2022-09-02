@@ -8,6 +8,7 @@ const forecast = require('./utils/forecast')
 
 // WebServer
 const app = express()
+const port = process.env.PORT || 3000 
 
 // Directories for partials, handlebars and css/json/js/etc files
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -90,8 +91,8 @@ app.get('/weather', (req, res) => {
 
 
 //To start the server and we use 3000 port
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port '+ port)
 })
 
 
