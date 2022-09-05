@@ -48,14 +48,6 @@ app.get('/help', (req, res) => {
     })
 })
 
-app.get('*', (req, res) => {
-    res.render('404', {
-
-        title:'404',
-        error_message: 'Page not Found'
-    })
-})
-
 // Get Weather Page                 // app.com/weather
 app.get('/weather', (req, res) => {
 
@@ -89,6 +81,13 @@ app.get('/weather', (req, res) => {
    
 })
 
+app.get('*', (req, res) => {
+    res.render('404', {
+
+        title:'404',
+        error_message: 'Page not Found'
+    })
+})
 
 //To start the server and we use 3000 port
 app.listen(port, () => {
